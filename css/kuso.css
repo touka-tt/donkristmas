@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+body {
+	background-image: url("./christmas-seamless-pattern-of-icons_1085-1117.jpg");
+	background-repeat:repeat; 
+}
+
 img#mainimg {
     animation-name: scale;
     animation-duration: 1.5s;
