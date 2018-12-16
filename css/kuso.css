@@ -1,15 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
-body {
-	background-image: url("../img/ayu.gif");
-	background-repeat: repeat;
-}
 
-h1 {
-	text-align: center;
-	color: #000;
-}
-h1 img {
+
+img {
     animation-name: scale;
     animation-duration: 1.5s;
 	animation-iteration-count: infinite;
