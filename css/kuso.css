@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	background-image: url("../img/ayu.gif");
+	background-repeat: repeat;
+}
+
+h1 {
+	text-align: center;
+}
