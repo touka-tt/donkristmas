@@ -6158,11 +6158,13 @@ a.badge:focus {
 }
 
 h1 {
-  color: #0000ff;
+text-shadow: 2px 0px 0px #000000, 0px 2px 0px #000000, -2px 0px 0px #000000, 0px -2px 0px #000000;
+  color: #fff;
 }
 
 h2 {
-  color: #0000ff;
+	text-shadow: 1px 0px 0px #005500, 0px 1px 0px #005500, -1px 0px 0px #005500, 0px -1px 0px #005500;
+  color: #fff;
 }
 
 h3 {
