@@ -7,4 +7,27 @@ body {
 
 h1 {
 	text-align: center;
+	color: #000;
+}
+h1 img {
+    animation-name: scale;
+    animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+ 
+@keyframes scale {
+    from {
+		transform: scale(1.0, 1.0);
+	}
+	50% {
+		transform: scale(0.5, 0.5);
+	}
+    to { 
+		transform: scale(1.0, 1.0); 
+	}
+}
+
+canvas#gameCanvas {
+	background-color: #000;
+	margin-left: auto;
 }

@@ -3,27 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <title>MERRY DONKRISTMAS!</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <link href="./css/kuso.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 	<h1>冬と言えば...<br><img src="./img/donk.png"></h1>
-<script type="text/javascript" src="./js/JQuery-Snowfall-master/dist/snowfall.jquery.min.js"></script>
-<script type="text/javascript">
-  jQuery(document).snowfall({
-    flakeCount : 100,			// 要素の数
-    flakeColor : 'FFF',		// 要素の色
-    flakeIndex : 999999,		// 要素のz-index
-    minSize : 5,				// 要素の最小サイズ
-    maxSize : 20,				// 要素の最大サイズ
-    minSpeed : 2,				// 要素の最小落下スピード
-    maxSpeed : 5,				// 要素の最大落下スピード
-    round : true,				// 要素に丸みを持たせる？
-    shadow : false				// 要素に影をつける？
-    collection : 'body'		// 要素を指定の要素に積もらせる設定(画像を設定してもflakeColorで指定した要素の色が積もります)
-    image : '.img/illust454.png'		// 要素を指定の画像に変更
-  });
+	
+	<canvas id="gameCanvas"></canvas>
+	
+    <script type="text/javascript" src="./js/JQuery-Snowfall-master/dist/snowfall.jquery.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).snowfall({
+        flakeCount : 100,			// 要素の数
+        flakeColor : '#FFF',		// 要素の色
+        flakeIndex : 999999,		// 要素のz-index
+        minSize : 5,				// 要素の最小サイズ
+        maxSize : 20,				// 要素の最大サイズ
+        minSpeed : 2,				// 要素の最小落下スピード
+        maxSpeed : 5,				// 要素の最大落下スピード
+        round : true,				// 要素に丸みを持たせる？
+        shadow : false				// 要素に影をつける？
+        //collection : 'div'		// 要素を指定の要素に積もらせる設定(画像を設定してもflakeColorで指定した要素の色が積もります)
+        //image : "img.jpg"		    // 要素を指定の画像に変更
+      });
+    </script>
+	<script type="text/javascript" src="./js/spaceinvaders-master/js/spaceinvaders.js"></script>
+	<script>
+//  Setup the canvas.
+var canvas = document.getElementById("gameCanvas");
+canvas.width = 800;
+canvas.height = 600;
+
+//  Create the game.
+var game = new Game();
+
+//  Initialise it with the game canvas.
+game.initialise(canvas);
+
+//  Start the game.
+game.start();
+
+//  Listen for keyboard events.
+var pressedKeys = [];
+window.addEventListener("keydown", function keydown(e) {
+  var keycode = window.event.keycode || e.which;
+    if(!pressedKeys[keycode])
+      pressedKeys[keycode] = true;
+    //  Supress further processing of left/right/space (37/29/32)
+    if(keycode == 37 || keycode == 39 || keycode == 32) {
+      e.preventDefault();
+    }
+    game.keyDown(keycode);
+});
+window.addEventListener("keyup", function keydown(e) {
+  var keycode = window.event.keycode || e.which;
+    if(pressedKeys[keycode])
+      delete pressedKeys[keycode];
+    game.keyUp(keycode);
+});
 </script>
 </body>
 </html>
