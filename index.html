@@ -2,9 +2,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>無題ドキュメント</title>
+<title>MERRY DONKRISTMAS!</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 
 <body>
+	<h1>冬と言えば<br><img src="./img/donk.png"></h1>
+<script type="text/javascript" src="./js/JQuery-Snowfall-master/dist/snowfall.jquery.min.js"></script>
+<script type="text/javascript">
+  jQuery(document).snowfall({
+    flakeCount : 100,			// 要素の数
+    flakeColor : 'FFF',		// 要素の色
+    flakeIndex : 999999,		// 要素のz-index
+    minSize : 5,				// 要素の最小サイズ
+    maxSize : 20,				// 要素の最大サイズ
+    minSpeed : 2,				// 要素の最小落下スピード
+    maxSpeed : 5,				// 要素の最大落下スピード
+    round : true,				// 要素に丸みを持たせる？
+    shadow : false				// 要素に影をつける？
+    collection : 'body'		// 要素を指定の要素に積もらせる設定(画像を設定してもflakeColorで指定した要素の色が積もります)
+    image : '.img/illust454.png'		// 要素を指定の画像に変更
+  });
+</script>
 </body>
 </html>
