@@ -1,8 +1,6 @@
 @charset "UTF-8";
-/* CSS Document */
 
-
-img {
+img#mainimg {
     animation-name: scale;
     animation-duration: 1.5s;
 	animation-iteration-count: infinite;
